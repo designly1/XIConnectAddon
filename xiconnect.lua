@@ -69,7 +69,7 @@ local push = function(data, endpoint, method, log_response)
     elseif code == 404 or code == 409 or code == 401 then
         return code
     else
-        notice("Failed to send data: " .. (status or 'Unknown error'))
+        debug_print("Failed to send data: " .. (status or 'Unknown error'))
         return false
     end
 end
@@ -91,7 +91,7 @@ local fetch_data = function(endpoint, method)
     elseif code == 404 or code == 409 or code == 401 then
         return code
     else
-        notice("Failed to fetch data: " .. (status or 'Unknown error'))
+        debug_print("Failed to fetch data: " .. (status or 'Unknown error'))
         return false
     end
 end
