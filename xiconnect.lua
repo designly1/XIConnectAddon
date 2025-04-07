@@ -232,7 +232,7 @@ local ping = function(log_response)
         run = false
         return
     end
-    if response.events then
+    if type(response) == 'table' and response.events then
         notice('Received ' .. #response.events .. ' events')
         for _, event in pairs(response.events) do
             notice('Processing event: ' .. event.type)
